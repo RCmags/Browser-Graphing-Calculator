@@ -1,0 +1,143 @@
+<!-- Page layout for calculator -->
+
+<html>
+    <head>
+        <title>CS81 - Final project</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+	
+		<!-- Equation and instructions -->
+		<div style = "float: left; padding-right: 10px;">
+		
+			<h1> Graphing calculator </h1>
+		
+			<!-- Equation inputs: -->
+			
+				<!-- Input 1 -->
+			<p> 
+				Equation 1: 
+				<input id = 'eq1' type = "text" name = "inter_fname"/> 
+				
+				Colour: 
+				<select id='colour1'>
+					<option value="black" selected>	black 	</option>
+					<option value="red">			red		</option>
+					<option value="blue">			blue	</option>
+					<option value="green">			green	</option>
+				</select> 
+			</p>
+			
+				<!-- Input 2 -->
+			<p> 
+				Equation 2: 
+				<input id = 'eq2' type = "text" name = "inter_fname"/> 
+				
+				Colour: 
+				<select id='colour2'>
+					<option value="black" selected>	black 	</option>
+					<option value="red">			red		</option>
+					<option value="blue">			blue	</option>
+					<option value="green">			green	</option>
+				</select> 
+			</p>
+			
+				<!-- Input 3 -->
+			<p> 
+				Equation 3: 
+				<input id = 'eq3' type = "text" name = "inter_fname"/> 
+				
+				Colour: 
+				<select id='colour3'>
+					<option value="black" selected>	black 	</option>
+					<option value="red">			red		</option>
+					<option value="blue">			blue	</option>
+					<option value="green">			green	</option>
+				</select> 
+			</p>
+			
+				<!-- Submit button -->
+			<button id = 'btnSubmit' > Submit </button>
+			
+				<!-- Instructions -->
+			<p> Enter a javascript expression, </p>
+			<p> Something like "2*x + 1" or "Math.sin(x)". </p>
+			<p> Only elementary functions are accepted. </p>
+		</div>	
+			
+		<!-- Graph and buttons -->
+		<div style = "float: left;">
+
+			<!-- Graph canvas -->
+			<div style = "float: left;">
+				<canvas id = "canvas" width = "500" height = "500" style = "border: 1px solid #000000;" > </canvas>
+			</div>
+			
+			<!-- Graph manipulation -->
+			<div style = "float: bottom;" >
+				
+				<!-- Axis Offset -->
+				<div style = "float:left" >
+			
+					<p style = "text-align: center"> Axis offset: </P>
+				
+					<div style = "float: bottom;" >
+					
+						<!-- Left button -->
+						<div style = "float: left" >
+							<button id = 'offset_left'> < </button>
+						</div>
+						
+						<!-- Up/down offset -->
+						<div style = "float: left" >
+								
+								<div style = "float: up;">
+									<button id = 'offset_up'> /\ </button>
+								</div>
+								
+								<button id = 'offset_down'> \/ </button>	
+						</div>
+						
+						<!-- Right button -->
+						<button id = 'offset_right'> > </button>
+					</div>
+				</div>
+				
+				<!-- Scale -->
+				
+					<!-- X axis: -->
+				<div style = "float: left; padding-left: 20px" > 
+					
+					<p style = "text-align: center"> Scale X </p>
+					
+					<div style = "float:bottom"> 
+						<button id = 'scale_x_plus'> + </button>
+						<button id = 'scale_x_minus'> - </button>
+					</div>
+				</div>
+				
+					<!-- Y axis: -->
+				<div style = "float: left; padding-left: 20px" > 
+					
+					<p style = "text-align: center"> Scale Y </p>
+					
+					<div style = "float:bottom"> 
+						<button id = 'scale_y_plus'> + </button>
+						<button id = 'scale_y_minus'> - </button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+        	
+		<!-- Generate graph via Javascript -->
+		<script src="canvas_graph.js"></script>
+
+		<!-- Event listeners -->
+		<script src ="user_input.js"></script>
+		
+		<!-- Execute functions -->
+		<script src ="implement.js"></script>
+	
+</body>
+</html>
